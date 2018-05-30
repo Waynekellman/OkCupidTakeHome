@@ -33,19 +33,24 @@ public class MatchAdapter extends RecyclerView.Adapter<ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         holder.OnBind(matches.get(position));
+        checkIfFavorite(position,holder);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 matches.get(position).switchLiked();
-                if (matches.get(position).isLiked()) {
-                    holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.yellow));
-                } else {
-                    holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.white));
-
-                }
+                checkIfFavorite(position, holder);
 
             }
         });
+    }
+
+    private void checkIfFavorite(int position, @NonNull ViewHolder holder) {
+        if (matches.get(position).isLiked()) {
+            holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.yellow));
+        } else {
+            holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.white));
+
+        }
     }
 
     @Override

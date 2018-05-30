@@ -15,6 +15,38 @@ public class MatchModel implements IMatchModel {
     private String username;
     private String city_name;
 
+    public void setMatch(int match) {
+        this.match = match;
+    }
+
+    public void setLiked(boolean liked) {
+        this.liked = liked;
+    }
+
+    public void setState_code(String state_code) {
+        this.state_code = state_code;
+    }
+
+    public void setState_name(String state_name) {
+        this.state_name = state_name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setPhoto(Photo photo) {
+        this.photo = photo;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setCity_name(String city_name) {
+        this.city_name = city_name;
+    }
+
     public int getMatch() {
         return match;
     }
