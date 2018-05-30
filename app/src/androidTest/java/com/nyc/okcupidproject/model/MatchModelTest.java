@@ -34,7 +34,6 @@ public class MatchModelTest {
 
     @Test
     public void getMatchPercent() throws Exception {
-        //String.valueOf(match/100) + "% Match"
         MatchModel model = new MatchModel();
         model.setMatch(1234);
         String match = "12% Match";
